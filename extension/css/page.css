@@ -1,0 +1,18 @@
+
+.doc_checker_updated {
+    background-color: #F08080 !important;
+}
+.doc_checker_checked {
+    border: 1px solid #00CC00 !important;
+}
+.doc_checker_new {
+    background-color: #F08080 !important;
+}
+
+.doc_checker_uncheck_button {
+    display: none !important;
+}
+*:hover > .doc_checker_uncheck_button {
+    display: inline-block !important;
+}
+

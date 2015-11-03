@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+    "name": "Document Checker",
+    "version": "1.0",
+
+    "description": "Extension to check the update of documents.",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "unlimitedStorage",
+        "file://*",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_icon": "icons/icon32.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "file://*", "http://*/*", "https://*/*" ],
+            "css": [ "css/page.css" ],
+            "js": [
+                "js/common/misc.js",
+                "js/common/document.js",
+                "js/common/document_manager_forwarder.js",
+                "js/content_script/decorator.js",
+                "js/content_script/page_parser.js",
+                "js/content_script/main.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "js/common/misc.js",
+            "js/common/document.js",
+            "js/background/document_manager.js",
+            "js/background/background.js"
+        ],
+        "persistent": false
+    },
+    "options_page": "html/options.html"
+}
